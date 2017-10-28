@@ -1,1 +1,22 @@
 <h1>New Author</h1>
+
+<%= form_for :author do |f| %>
+  <p>
+    <%= f.label :'First name' %><br>
+    <%= f.text_field :'First name' %>
+  </p>
+ 
+  <p>
+    <%= f.label :'Last name' %><br>
+    <%= f.text_area :'Last name' %>
+  </p>
+
+  <p>
+    <%= f.label :Homepage %><br>
+    <%= f.text_area :Homepage %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

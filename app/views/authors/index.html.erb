@@ -5,6 +5,7 @@
     <th>First name</th>
     <th>Last name</th>
     <th>Homepage</th>
+    <th>Name</th>
   </tr>
 
   <% @authors.each do |author| %>
@@ -12,6 +13,7 @@
       <td><%= author.first_name %></td>
       <td><%= author.last_name %></td>
       <td><%= author.homepage %></td>
+      <td><%= author.name %></td>
     </tr>
   <% end %>
 </table>

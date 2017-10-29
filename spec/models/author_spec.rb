@@ -4,9 +4,9 @@ describe Author, :type => :model do
   it "Should create Alan Turing" do
    # visit new_author_path
 
-    author = Author.new(First_name: "Alan", Last_name: "Turing", Homepage: "http://wikipedia.org/Alan_Turning")
-    expect(author.First_name).to eq("Alan")
-    expect(author.Last_name).to eq("Turing")
-    expect(author.Homepage).to eq("http://wikipedia.org/Alan_Turning")
+    author = Author.new(first_name: "Alan", last_name: "Turing", homepage: "http://wikipedia.org/Alan_Turning")
+    expect(author.first_name).to eq("Alan")
+    expect(author.last_name).to eq("Turing")
+    expect(author.homepage).to eq("http://wikipedia.org/Alan_Turning")
   end
 end

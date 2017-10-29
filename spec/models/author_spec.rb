@@ -8,5 +8,6 @@ describe Author, :type => :model do
     expect(author.first_name).to eq("Alan")
     expect(author.last_name).to eq("Turing")
     expect(author.homepage).to eq("http://wikipedia.org/Alan_Turning")
+    expect(author.name).to eq("Alan Turning")
   end
 end

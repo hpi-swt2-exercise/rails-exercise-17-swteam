@@ -14,11 +14,11 @@
 ActiveRecord::Schema.define(version: 20171028161130) do
 
   create_table "authors", force: :cascade do |t|
-    t.string   "author_first_name"
-    t.string   "author_last_name"
-    t.string   "author_homepage"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "homepage"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -18,6 +18,6 @@ describe "Author index page", type: :feature do
   it "Should link to author page" do
 	visit '/authors'
 	
-	expect(page).to have_css("a", :text => "Show")
+	expect(page).to have_content("Show")
   end
 end

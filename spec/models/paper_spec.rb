@@ -20,4 +20,9 @@ describe Paper, :type => :model do
     paper = Paper.new(title: "MACHINE LEARNING EXTREME", year: 1950)
     expect(paper.id).to be_nil
   end
+
+  it "Should ensure year" do
+    paper = Paper.new(title: "MACHINE LEARNING EXTREME", venue: "mind 49: 433-460")
+    expect(paper.id).to be_nil
+  end
 end

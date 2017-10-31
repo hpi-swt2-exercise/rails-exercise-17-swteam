@@ -9,6 +9,7 @@
     <th>Show author page</th>
     <th>Edit author</th>
     <th>Delete author</th>
+    <th>Delete author second variant</th>
   </tr>
 
   <% @authors.each do |author| %>
@@ -22,6 +23,7 @@
       <td><%= button_to 'Destroy', author_path(author),
 	      method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
+      <td><a rel="nofollow" data-method="delete" href="authors/<%=author.id %>">Destroy</a></td>
     </tr>
   <% end %>
 </table>

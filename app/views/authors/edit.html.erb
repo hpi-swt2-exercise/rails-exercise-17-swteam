@@ -10,6 +10,7 @@
 	    <ul>
 	      <% @author.errors.full_messages.each do |msg| %>
 		<li><%= msg %></li>
+	      <% end %>
 	    </ul>
 	  </div>
 	<% end %>
@@ -21,12 +22,12 @@
 
 	<p>
 	  <%= f.label :last_name %><br>
-	  <%= f.text_field :last_name %>
+	  <%= f.text_area :last_name %>
 	</p>
 
 	<p>
 	  <%= f.label :homepage %><br>
-	  <%= f.text_field :homepage %>
+	  <%= f.text_area :homepage %>
 	</p>
 
 	<p>

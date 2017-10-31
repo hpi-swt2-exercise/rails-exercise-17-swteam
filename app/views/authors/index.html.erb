@@ -7,6 +7,7 @@
     <th>Homepage</th>
     <th>Name</th>
     <th>Show author page</th>
+    <th>Edit author</th>
   </tr>
 
   <% @authors.each do |author| %>
@@ -16,6 +17,7 @@
       <td><%= author.homepage %></td>
       <td><%= author.name %></td>
       <td><a href="authors/<%=author.id %>">Show</a></td>
+      <td><a href="authors/<%=author.id %>/edit">Edit</a></td>
     </tr>
   <% end %>
 </table>

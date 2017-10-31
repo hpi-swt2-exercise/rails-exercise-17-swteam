@@ -25,6 +25,16 @@ class AuthorsController < ApplicationController
 	  end
 	  #render plain: params[:author].inspect
 	end
+	
+	def update
+	  @author = Author.find(params[:id])
+
+	  if @author.update(author_params)
+	    redirect_to @author
+	  else
+	    render 'edit'
+	  end
+	end
 
 	private
 	  def author_params

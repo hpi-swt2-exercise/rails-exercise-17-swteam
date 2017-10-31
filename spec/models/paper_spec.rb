@@ -11,8 +11,13 @@ describe Paper, :type => :model do
    # expect(author.name).to eq("Alan Turing")
   end
 
-  it "Should ensure last name" do
+  it "Should ensure title" do
     paper = Paper.new(venue: "mind 49: 433-460", year: 1950)
+    expect(paper.id).to be_nil
+  end
+
+  it "Should ensure venue" do
+    paper = Paper.new(title: "MACHINE LEARNING EXTREME", year: 1950)
     expect(paper.id).to be_nil
   end
 end

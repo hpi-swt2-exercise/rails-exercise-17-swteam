@@ -4,7 +4,7 @@
   <% if @author.errors.any? %>
    <div id ="error_explanation">
      <h2>
-       <%= pluralize(@author.errors.count, "error") %> last name can't be blank
+       <%= pluralize(@author.errors.count, "error") %> These errors occured:
      </h2>
    <ul>
      <% @author.errors.full_messages.each do |msg| %>

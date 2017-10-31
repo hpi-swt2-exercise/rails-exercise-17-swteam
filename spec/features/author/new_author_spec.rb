@@ -20,4 +20,13 @@ describe "New author page", type: :feature do
     fill_in "Homepage", :with => "http://wikipedia.org/Alan_Turing"
     find('input[type="submit"]').click
   end
+  it "should show error message" do
+    visit new_author_path
+
+    fill_in "First name", :with => "Alan"
+    fill_in "Homepage", :with => "http://wikipedia.org/Alan_Turing"
+    find('input[type="submit"]').click 
+
+    expect(page).to have_content("last name can't be blank")
+  end
 end

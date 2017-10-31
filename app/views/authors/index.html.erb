@@ -8,6 +8,7 @@
     <th>Name</th>
     <th>Show author page</th>
     <th>Edit author</th>
+    <th>Delete author</th>
   </tr>
 
   <% @authors.each do |author| %>
@@ -18,6 +19,9 @@
       <td><%= author.name %></td>
       <td><a href="authors/<%=author.id %>">Show</a></td>
       <td><a href="authors/<%=author.id %>/edit">Edit</a></td>
+      <td><%= button_to 'Destroy', author_path(author),
+	      method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

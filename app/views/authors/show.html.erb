@@ -13,5 +13,42 @@
  <%= @author.homepage %>
 </p>
 
+<h2>Papers</h2>
+<% @author.papers.each do |paper| %>
+  <p>
+    <strong>Title:</strong>
+    <%= paper.title %>
+  </p>
+ 
+  <p>
+    <strong>Venue:</strong>
+    <%= paper.venue %>
+  </p>
+
+  <p>
+    <strong>Year:</strong>
+    <%= paper.year %>
+  </p>
+<% end %>
+
+<h2>Add a paper:</h2>
+<%= form_for([@author, @author.papers.build]) do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :venue %><br>
+    <%= f.text_area :venue %>
+  </p>
+  <p>
+    <%= f.label :year %><br>
+    <%= f.text_area :year %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_author_path(@author) %> |
 <%= link_to 'Back', authors_path %>

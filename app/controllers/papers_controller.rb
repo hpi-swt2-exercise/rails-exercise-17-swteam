@@ -16,14 +16,27 @@ class PapersController < ApplicationController
 	end
 
 	def create
-	  @paper = Paper.new(paper_params)
-
-	  if @paper.save
-		redirect_to @paper
-	  else
-		render 'new'
+	  if Author.find_by(params[:author_id]).blank?
+	    @paper = Paper.new(paper_params)
+          else
+	    @author = Author.find(params[:author_id])
+            @paper = @author.papers.create(paper_params)
 	  end
-	  #render plain: params[:author].inspect
+	  
+	  if Author.find_by(params[:author_id]).blank?
+	    if @paper.save
+              redirect_to @paper
+            else
+                render 'new'
+            end
+	  else
+	    if @paper.save
+                redirect_to @author
+            else
+                render 'new'
+            end
+	  end
+	  #render plain: params[:paper].inspect
 	end
 
 	def update

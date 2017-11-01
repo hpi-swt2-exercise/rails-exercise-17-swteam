@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  resources :authors
-  resources :papers
+  #resources :authors
+  #resources :papers
   resources :papers do
     resources :authors
+  end
+  resources :authors do
+    resources :papers
   end
   root 'home#index'
  

@@ -16,12 +16,25 @@ class AuthorsController < ApplicationController
 	end
 
 	def create
-          @author = Author.new(author_params)
-
-	  if @author.save
-		redirect_to @author
+	  if Paper.find_by(params[:paper_id]).blank?
+	    @author = Author.new(author_params)
+          else
+	    @paper = Paper.find(params[:paper_id])
+            @author = @paper.authors.create(author_params)
+	  end
+	  
+	  if Paper.find_by(params[:paper_id]).blank?
+	    if @author.save
+              redirect_to @author
+            else
+                render 'new'
+            end
 	  else
-		render 'new'
+	    if @author.save
+                redirect_to @paper
+            else
+                render 'new'
+            end
 	  end
 	  #render plain: params[:author].inspect
 	end

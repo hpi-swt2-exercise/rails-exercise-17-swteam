@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   resources :authors
   resources :papers
+  resources :papers do
+    resources :authors
+  end
   root 'home#index'
  
   # Example of regular route:

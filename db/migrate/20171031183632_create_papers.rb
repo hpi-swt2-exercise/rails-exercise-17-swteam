@@ -4,7 +4,6 @@ class CreatePapers < ActiveRecord::Migration
       t.string :title
       t.string :venue
       t.integer :year
-      t.references :author, index: true, foreign_key: true
 
       t.timestamps null: false
     end

@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20171102082648) do
     t.integer "paper_id"
   end
 
+  add_index "authors_papers", ["author_id"], name: "index_authors_papers_on_author_id"
+  add_index "authors_papers", ["paper_id"], name: "index_authors_papers_on_paper_id"
+
   create_table "papers", force: :cascade do |t|
     t.string   "title"
     t.string   "venue"

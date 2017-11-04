@@ -1,8 +1,8 @@
 class AuthorsPapers < ActiveRecord::Migration
   def change
     create_table :authors_papers, id: false do |t|
-      t.integer :author_id
-      t.integer :paper_id
+      t.belongs_to :author, index: true
+      t.belongs_to :paper, index: true 
     end
   end
 end

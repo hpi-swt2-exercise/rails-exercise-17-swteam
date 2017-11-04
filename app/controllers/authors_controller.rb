@@ -19,7 +19,8 @@ class AuthorsController < ApplicationController
             @author = Author.new(author_params)
 	  
 	    if @author.save
-                redirect_to @author
+		# @paper.authors << @author
+		redirect_to @author
             else
                 render 'new'
             end

@@ -4,4 +4,5 @@ class Paper < ActiveRecord::Base
 	validates :venue, presence: true
 	validates :year, presence: true
 	validates_numericality_of :year, :only_integer => true
+	scope :created_in, ->(year) {where("year = ?", year) if year.present? }
 end

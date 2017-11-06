@@ -15,8 +15,8 @@
 	<td><%= paper.title %></td>
 	<td><%= paper.venue %></td>
 	<td><%= paper.year %></td>
-	<td><a href="<%=paper.id %>">Show</a></td>
-        <td><a href="<%=paper.id %>/edit">Edit</a></td>
+	<td><a href="papers/<%=paper.id %>">Show</a></td>
+        <td><a href="papers/<%=paper.id %>/edit">Edit</a></td>
         <td><%= button_to 'Destroy', paper_path(paper),
 	      method: :delete,
               data: { confirm: 'Are you sure?' } %></td>
